@@ -76,7 +76,7 @@ resource "aws_vpc_peering_connection" "euwest3-to-euwest2" {
   peer_region = var.region-worker
 }
 
-# Accept VPC peering request in eu-west-3 from eu-west-3
+# Accept VPC peering request in eu-west-2 from eu-west-3
 
 resource "aws_vpc_peering_connection_accepter" "accept_peering" {
   provider                  = aws.region-worker
@@ -120,7 +120,7 @@ resource "aws_main_route_table_association" "set-master-default-rt-assoc" {
 
 
 
-# Create Routing table in eu-west-3
+# Create Routing table in eu-west-2
 
 resource "aws_route_table" "internet_route_london" {
   provider = aws.region-worker
